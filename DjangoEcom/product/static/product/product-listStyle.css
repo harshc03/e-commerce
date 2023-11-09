@@ -1,0 +1,315 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+.navbar {
+    opacity: 0.8;
+    background-color: #03045e;
+    padding: 1.2rem;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 100vw;
+    top: 0px; 
+    left: 0px;
+    z-index: 9999;
+}
+
+.nav-links>li {
+    list-style-type: none;
+    margin: 10px;
+}
+
+.nav-links>li>a {
+    text-decoration: none;
+    color: white;
+}
+
+.hero {
+    background-image: url(https://www.headphonezone.in/cdn/shop/files/Headphone-Zone-Portable-Amps-DACs-Collection-banner-new.jpg?v=1681376626&width=2800);
+    /* background-image: url(https://cdn.pixabay.com/photo/2017/09/23/13/48/sale-2778918_640.png); */
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 100px;
+}
+
+.content {
+    text-align: center;
+    height: 100vh;
+    justify-content: center;
+    align-items: flex-start;
+    color: #eee;
+    /* font-weight: 900; */
+    margin-left: 90px;
+    font-size: 24px;
+    font-family: 'Gabarito', sans-serif;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+.content * {
+    z-index: 10;
+    color: #eee;
+}
+
+#search input {
+    padding: 8px;
+    margin: 5px;
+    font-size: 14px;
+    background-color: #03045e;
+    border: none;
+    outline: none;
+    color: #fff;
+
+}
+
+#search input::placeholder {
+    color: white;
+}
+
+#search {
+    border-bottom: 2px solid #ccc;
+    margin: 0 10px 0 10px;
+}
+
+/* #search input:focus, #search i:focus {
+    border-bottom: 2px solid white; 
+} */
+.dropdown-category {
+    display: none;
+    position: absolute;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-category li a {
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+
+}
+
+.dropdown-category li {
+
+    list-style-type: none;
+    padding: 10px;
+    background-color: #03045e;
+}
+
+.dropdown-category li:hover a {
+    color: black;
+}
+
+.dropdown-category li:hover {
+    color: black;
+    background-color: #CAF0F8;
+    font-weight: 600;
+}
+
+.dropdown:hover .dropdown-category {
+    display: block;
+}
+
+.brands {
+    justify-content: center;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.brands ul {
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.brands li {
+    list-style-type: none;
+    padding: 40px;
+
+    /* width: 100%; */
+}
+
+.icon-padd {
+    padding-right: 15px;
+}
+
+.brands li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    /* display: block; */
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    /* border: 1px solid #333; */
+    border-radius: 5px;
+}
+
+.brands li a:hover {
+    background-color: #0077B6;
+    color: white;
+}
+
+.quality {
+    margin: 10px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.quality div {
+    flex-basis: 20%;
+    text-align: center;
+    padding: 30px 0 10px 0;
+}
+
+.featured-products {
+    justify-content: center;
+    align-items: center;
+}
+
+.featured-products h2 {
+    font-size: 28px;
+}
+
+.prod-row-align {
+    /* flex-basis: 22%; */
+    margin: 15px;
+    justify-content: center;
+    text-align: center;
+}
+
+.prod-row-align div {
+    margin: 10px;
+}
+
+.prod-row-align img {
+    width: 300px;
+    height: 400px;
+}
+
+.text-decor-none:hover {
+    opacity: 0.8;
+    background-color: #023E8A;
+    border-radius: 5px;
+    color: white;
+}
+
+.about {
+    width: 75%;
+    margin: auto;
+    background-color: #48CAE4;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    height: 600px;
+}
+
+.about div {
+    flex-basis: 40%;
+}
+.right{
+    background-color: white;
+    height: 70%;
+    color: #0077B6;
+    padding: 50px;
+    border-radius: 15px;
+}
+.right h2{
+    font-size: 50px;
+    /* text-align: center; */
+}
+.right p{
+    font-size: 18px;
+}
+.abt-btn-width{
+    width: 50%;
+    text-align: center;
+    color: white;
+    background-color: #0096C7;
+    font-weight: 900;
+}
+.left {
+    /* position: relative; */
+    background-color: #020445  ;
+    padding: 120px;
+    height: 50%;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.about img {
+    top: 50px;
+    left: 85px;
+    position: absolute;
+    width: 400px;
+    height: 500px;
+}
+.contact-us{
+    background-color: #CAF0F8;
+    justify-content: center;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    border-radius: 15px;
+    background-image: url(data:image/jpeg;base64,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);
+    color:white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.form-right,.form-left{
+    flex-basis: 40%;
+    align-items: center;
+}
+form{
+    justify-content: center;
+}
+.cont-btn{
+    width: 30%;
+    align-self: center;
+    margin: 14px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px;
+}
+.contact-us h2{
+    font-size: 30px;
+}
+.contact-us div{
+    padding: 10px;
+    margin: 10px;
+}
+.contact-head h1{
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+}
+.align-center{
+    align-items: center;
+}
+.card{
+    width: 50%;
+}

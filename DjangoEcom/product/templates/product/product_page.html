@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'product/product-pageStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'product/utilities.css' %}">
+    <link rel="icon" href="{% static 'product/assets/headphones.ico' %}" type="image/x-icon">
+    <title>E-Commerce</title>
+</head>
+
+<body>
+    <section class="header">
+        <nav class="d-flex navbar">
+            <h2><span><i class="fa-solid fa-1" id="i-icon"></i></span>Stop</h2>
+            <div class="d-flex ">
+                <ul class="d-flex nav-links align-items-center">
+                    <li><a href="">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Categories</a>
+                        <ul class="dropdown-category">
+                            <li><a href="../e-commerce/mens.html">IEMs</a></li>
+                            <li><a href="#">DAC</a></li>
+                            <li><a href="#">Headphones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Discover</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li class="d-flex align-items-center">
+                        <div id="search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" placeholder="search products & more">
+                        </div>
+                        
+                    </li>
+                    <li><a href="{% url 'view_cart' %}" id="cart-link"><i class="fa-solid fa-heart fa-xl" style="color: #ffffff;"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-circle-user fa-xl" style="color: #ffffff;"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-cart-shopping fa-xl" style="color: #fcfcfc;"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-share-from-square fa-xl" style="color: #ffffff;"></i></a></li>
+                </ul>
+                
+            </div>
+        </nav>
+    </section>
+    <section class="products">
+        <div class="hero-section d-flex">
+            <div class="image-section d-flex">
+                <ul class="piclist d-col">
+                    {% for product_image in product_images %}
+                        <li>
+                            <a href="#" class="zoom-trigger">
+                                <img src="{{ product_image.image }}" alt="{{ product.name }}"
+                                    class="zoom-image" data-zoom-src="{{ product_image.image }}">
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="focus-image">
+                    <img src="{{ product_images.first.image }}" alt="" class="my_pic" id="zoomed-image">
+                </div>
+                
+            </div>
+            <div class="text-section">
+                <h3>{{product.name}}</h3>
+                
+                <h6>Planar Magnetic In-Ears</h6>
+                <span class="noone">#1 BEST SELLER</span>
+                <span class="in"> in </span>
+                <a href="" class="linkz">Beginner Audiophile IEMs</a>
+                <br>
+                <hr class="line"><br>
+                <span class="money">&#8377 {{product.price}}</span> 
+                <a href="" class="option">With Mic</a>
+                
+                <a href="" class="option">Without Mic</a>
+                
+                <br>
+                <a href="{% url 'add_to_cart' product.id %}" class="cart">ADD TO CART</a>
+                <br>
+                <div class="info d-flex">
+                    <div class="div">
+                        <h5>DELIVERY</h5>
+                        <input type="text" id="pincodeInput" value="" placeholder="400001" maxlength="6">
+                        <button id="pinSubmit" class="pincode-button">CHANGE</button><br>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <path
+                                d="M17.26 4.81a.56.56 0 0 0-.182-.919.563.563 0 0 0-.613.123l-1.32 1.33a6.148 6.148 0 0 0-3.332-1.375V2.813h1.125a.563.563 0 1 0 0-1.125H9.563a.562.562 0 1 0 0 1.125h1.125V3.97c-7.79.969-7.313 12.061.562 12.342 5.251.023 8.114-6.26 4.708-10.192l1.302-1.31zm-4.272 7.976-2.227-3.567a.562.562 0 0 1-.083-.299v-2.39a.562.562 0 1 1 1.125 0v2.23l2.14 3.43a.562.562 0 0 1-.954.596z"
+                                fill="white"></path>
+                            <path d="M1.125 5.062h4.5a.562.562 0 0 0 0-1.124h-4.5a.562.562 0 1 0 0 1.125z" fill="white">
+                            </path>
+                            
+                            <path d="M1.125 7.875H3.91a.562.562 0 0 0 0-1.125H1.124a.562.562 0 1 0 0 1.125z"
+                                fill="white"></path>
+                            <path d="M1.125 10.688h2.337a.563.563 0 0 0 0-1.125H1.125a.562.562 0 1 0 0 1.125z"
+                                fill="white"></path>
+                            <path d="M1.125 13.5H3.91a.563.563 0 0 0 0-1.125H1.124a.563.563 0 0 0 0 1.125z"
+                                fill="white"></path>
+                            <path d="M5.625 15.188h-4.5a.563.563 0 0 0 0 1.125h4.5a.563.563 0 0 0 0-1.125z"
+                                fill="white"></path>
+
+                        </svg>
+                        <div class="ships-in-text">Ships in
+                            <b>24 Hours</b>
+                        </div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style="vertical-align: middle;">
+                            <g clip-path="url(#clip0_2311_627)" fill="white">
+                                <path
+                                    d="M2.534 12H.75a1.125 1.125 0 001.125 1.125h.197c.037-.413.198-.805.462-1.125zM11.25 12H5.718c.264.32.425.712.462 1.125h5.07a.375.375 0 00.376-.375v-.375A.375.375 0 0011.25 12zM4.125 14.625a1.312 1.312 0 100-2.625 1.312 1.312 0 000 2.625zM17.832 9.674l-1.44-3.17a1.503 1.503 0 00-1.366-.88H12.75a.375.375 0 00-.375.376v5.9a2.06 2.06 0 013.553 1.225h.947A1.125 1.125 0 0018 12v-1.55c0-.268-.057-.532-.168-.776zm-1.71-.3h-2.434A.375.375 0 0113.312 9V7.5a.375.375 0 01.375-.375h1.51a.75.75 0 01.684.44l.582 1.28a.375.375 0 01-.342.53z">
+                                </path>
+                                <path
+                                    d="M13.875 14.625a1.312 1.312 0 100-2.625 1.312 1.312 0 000 2.625zM10.5 3.375H1.875A1.125 1.125 0 00.75 4.5V9H.395c-.187 0-.36.128-.39.312a.375.375 0 00.37.438h.918c.187 0 .36.128.39.312a.376.376 0 01-.37.438H.395c-.187 0-.36.128-.39.312a.375.375 0 00.37.438H11.25a.375.375 0 00.375-.375V4.5A1.125 1.125 0 0010.5 3.375z">
+                                </path>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_2311_627">
+                                    <path fill="white" d="M0 0h18v18H0z"></path>
+                                </clipPath>
+                            </defs>
+
+                        </svg>
+                        <span style="font-weight: 500;font-size: 14px;line-height: 16px;color: white;">Delivery
+                            By:</span>
+                        <span
+                            style="font-weight: 500;font-size: 14px;line-height: 16px;color: white;font-weight:bold;">Sat,
+                            Jul 29th -<br> Sun, Jul 30th</span>
+                    </div>
+                    <div class="div3">
+                        <a href="https://www.headphonezone.in/pages/returns" target="_blank">RETURNS &amp; WARRANTY</a>
+                        <br>
+                        <div class="cursorpointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                                <g clip-path="url(#clip0_2314_641)" fill="white">
+                                    <path
+                                        d="M3.81 3.633h1.93c.315 0 .544.18.585.45a.533.533 0 01-.524.63c-1.082.005-2.166.005-3.25 0a.522.522 0 01-.534-.538 242.056 242.056 0 010-3.234.54.54 0 01.549-.546c.299.005.53.246.53.563.003.591 0 1.183 0 1.8.052-.038.09-.06.121-.09C4.635 1.368 6.306.59 8.223.44c3.22-.25 5.838.935 7.78 3.51 1.297 1.718 1.841 3.694 1.632 5.834-.283 2.907-1.703 5.14-4.19 6.667-1.58.974-3.32 1.367-5.165 1.19-2.74-.27-4.894-1.567-6.442-3.84C.874 12.381.414 10.796.393 9.083c-.003-.245.096-.435.322-.54a.51.51 0 01.574.085c.143.122.186.286.188.471.012 1.191.273 2.325.834 3.376 1.174 2.199 2.987 3.561 5.443 4 4.007.717 7.885-1.948 8.69-5.934.825-4.086-1.807-8.096-5.9-8.91-2.497-.495-4.719.142-6.623 1.845a1.728 1.728 0 00-.1.1c-.005.01-.004.023-.012.056z">
+                                    </path>
+                                    <path
+                                        d="M8.526 8.743c-1.536-.558-3.07-1.118-4.603-1.68a1.92 1.92 0 00-.197-.05.822.822 0 00-.016.104c0 1.757 0 3.515-.007 5.272 0 .18.095.222.23.27 1.01.365 2.018.733 3.027 1.102.574.21 1.148.417 1.748.634.01-.042.017-.084.022-.127 0-1.759 0-3.516.005-5.274 0-.158-.078-.206-.21-.253zM9.622 4.565c-.401-.161-.744-.18-1.157-.01-1.566.638-3.15 1.233-4.778 1.863.054.036.11.068.167.096 1.663.644 3.324 1.29 4.99 1.922a.635.635 0 00.415-.013c.893-.334 1.78-.684 2.669-1.028l2.463-.953c-.14-.06-.218-.099-.298-.13-1.492-.58-2.988-1.148-4.473-1.747zM14.392 9.479V7.013c-.082.024-.125.034-.166.05-1.593.57-3.185 1.145-4.782 1.71-.193.067-.186.184-.186.329.002 1.685.002 3.37 0 5.057 0 .084.01.169.016.273.052-.007.104-.018.155-.032 1.593-.571 3.184-1.148 4.78-1.713.177-.062.18-.166.18-.306l.002-2.901z">
+                                    </path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_2314_641">
+                                        <path fill="white" d="M0 0h18v18H0z"></path>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            7 Day Replacement<br> Guarantee<br>
+                        </div>
+                        <div aria-controls="warranty" aria-expanded="false" class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                                <path fill="white"
+                                    d="M8.2 1.8c-1-.5-3.4-.8-7.1 3.4v.1s0 .1.1.1h.1c.3 0 .7-.1 1.1-.1 1.2 0 2.1.6 2.4.8.1-.5 1.1-3.1 3.4-4.3z">
+                                </path>
+                                <path fill="white"
+                                    d="M5 6.1c.5-.2 1-.3 1.5-.3 1.4 0 2.4 1 2.7 1.4l1.6-5C8.46.467 5.629 4.563 5 6.1zm8.2-2.7c1.2 2.4.5 4.9.3 5.5.5 0 2.2.1 3.2 1.5 0 .1.1.1.2 0l.1-.1c-.6-5.5-2.7-6.7-3.8-6.9z">
+                                </path>
+                                <path fill="white"
+                                    d="M11 2.2l-1.6 5c.2-.1.6-.1 1-.1.9 0 2.1.3 3 1.7.485-1.937.088-7.245-2.4-6.6z">
+                                </path>
+                                <path fill="white"
+                                    d="M16.8 10.3l-.4.1c-.829-.979-1.952-1.363-3.05-1.343-1.243-1.727-2.748-1.864-4.14-1.587C7.78 5.884 6.148 5.83 4.8 6.3c-1.35-.761-1.983-.968-3.2-.7l-.2-.3c0-.1-.1-.1-.2 0s-.1.1 0 .2l.2.2C2.8 7.8 4.2 9.9 5.7 12h.1l-1 3.2.2.5 2.6.8.6-.2 1-3.2c2.5-.9 5-1.7 7.6-2.6 0 0 .1 0 .1-.1v-.1zM5.9 11.9v-.1l-4.2-6c1.4 0 2.4 1.1 2.7 1.4v.1L6.1 12zm2.8.9l-2.2-.7V12L4.7 7.2c2-.8 4 1.7 4 1.7s3.3-.9 4.2 1zm.5.1s-.1 0 0 0c-.1.1-.1.1 0 0h-.3L13 10c.4 0 1.7.1 2.8.5z">
+                                </path>
+                            </svg>
+                            1 Year Warranty
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        {% for description in product.description_set.all %}
+    <div class="product-description d-flex">
+        {% if forloop.counter|divisibleby:2 %}
+            <img src="{{ description.image }}" alt="" class="img1">
+            <div class="text-section-1">
+        {% else %}
+            <div class="text-section-2">
+        {% endif %}
+        <!-- Display description title and content -->
+        <h3>{{ description.decription_title }}</h3>
+        <br><br>
+        <p>{{ description.description }}</p>
+        {% if forloop.counter|divisibleby:2 %}
+            </div>
+        {% else %}
+            </div>
+            <img src="{{ description.image }}" alt="" class="img2">
+        {% endif %}
+    </div>
+{% endfor %}
+
+<div class="product-description d-flex">
+            
+    <div class="text-section-3">
+    <h3>The earbuds are also very comfortable; the shape felt just right for my ears and they are also very light. The silicone ear tips are soft and create a great seal.
+    </h3>
+    <img src="https://www.headphonezone.in/cdn/shop/files/GSM-Areana-Media-Reviews.svg?v=1676481285&width=200" alt="" class="logozz">
+    
+</div>
+
+
+        </div>
+    </section>
+
+</body>
+<script>
+    const zoomImages = document.querySelectorAll('.zoom-image');
+    const zoomedImage = document.getElementById('zoomed-image');
+
+    zoomImages.forEach((image) => {
+        image.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent the default behavior of the anchor tag
+            const zoomSrc = image.getAttribute('data-zoom-src');
+            zoomedImage.src = zoomSrc;
+        });
+    });
+</script>
+</html>

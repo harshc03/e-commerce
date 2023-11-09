@@ -1,0 +1,265 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="stylesheet" href="{% static 'product/utilities.css' %}">
+    <link rel="icon" href="../assets/headphones.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600&display=swap" rel="stylesheet">
+    <title>E-Commerce</title>
+</head>
+
+<body>
+    <section class="header">
+        <nav class="d-flex navbar">
+            <h2><span><i class="fa-solid fa-1" id="i-icon"></i></span>Stop</h2>
+            <div class="d-flex ">
+                <ul class="d-flex nav-links align-items-center">
+                    <li><a href="">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Categories</a>
+                        <ul class="dropdown-category">
+                            <li><a href="../e-commerce/mens.html">IEMs</a></li>
+                            <li><a href="#">DAC</a></li>
+                            <li><a href="#">Headphones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Discover</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li class="d-flex align-items-center">
+                        <div id="search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" placeholder="search products & more">
+                        </div>
+                        
+                    </li>
+                    <li><a href="{% url 'view_cart' %}" id="cart-link"><i class="fa-solid fa-heart fa-xl" style="color: #ffffff;"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-circle-user fa-xl" style="color: #ffffff;"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-cart-shopping fa-xl" style="color: #fcfcfc;"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-share-from-square fa-xl" style="color: #ffffff;"></i></a></li>
+                </ul>
+                
+            </div>
+        </nav>
+    </section>
+    <section>
+        <div class="hero-container d-flex d-col">
+            <img src="https://www.headphonezone.in/cdn/shop/files/Headphone-Zone-Moondrop-Blessing3-New-Homepage-Banner.jpg?v=1687331570&width=2000"
+                alt="" class="heroimg">
+            <h2 class="herotext">Why Headphones?</h2>
+            <span class="herotext-tag">Your private portal to a symphony of solitude.</span>
+            <a href="{% url 'product_list' %}" target="_blank" class="linkss" >Buy Now!</a>
+        </div>
+    </section>
+    <section>
+        <div class="first-div d-flex">
+            <div class="img1-div">
+                <img src="https://www.headphonezone.in/cdn/shop/files/media-grid-bundle-shot-5_a5f33799-6c89-4796-8c45-d79f86955dd4.jpg?v=1682424723&width=1400"
+                    alt="" class="imagee1">
+            </div>
+            <div class="text-div-1 d-col">
+                <span class="text-gradient"
+                    style="--gradient: linear-gradient(276deg, rgba(66, 207, 231, 1) 15%, rgba(237, 113, 163, 1) 85%)">Like
+                    You,
+                    We Love Music</span>
+                <p class="d-col">And we believe a Headphone is more than just an instrument for sound. It's the key to a
+                    mind-blowing moment of emotion, bringing you closer to your favourite artist, and yourself.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <h3 class="headee" style="font-family: 'Gabarito', sans-serif;">Shop By Categories</h3>
+        <div class="second-div d-flex">
+
+            <div class="image-with-text d-flex d-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="none" viewBox="0 0 24 24"
+                    id="earphone-model">
+                    <path fill="#FFC107" fill-rule="evenodd"
+                        d="M9.16865 6.76922C9.57226 6.86236 9.82394 7.26505 9.7308 7.66866 8.76938 11.8348 8.76938 16.1652 9.7308 20.3314 9.82394 20.735 9.57226 21.1377 9.16865 21.2308 8.76505 21.3239 8.36235 21.0723 8.26921 20.6687 7.25658 16.2806 7.25658 11.7195 8.26921 7.33137 8.36235 6.92776 8.76505 6.67608 9.16865 6.76922zM14.7794 6.78315C15.1753 6.66134 15.595 6.88352 15.7168 7.27942 17.0642 11.6585 17.0642 16.3415 15.7168 20.7206 15.595 21.1164 15.1753 21.3386 14.7794 21.2168 14.3835 21.095 14.1613 20.6753 14.2832 20.2794 15.5421 16.1878 15.5421 11.8122 14.2832 7.72055 14.1613 7.32465 14.3835 6.90497 14.7794 6.78315z"
+                        clip-rule="evenodd"></path>
+                    <path fill="#343A40" fill-rule="evenodd"
+                        d="M11.25 6.5C11.25 5.5335 10.4665 4.75 9.5 4.75H5.5C5.08579 4.75 4.75 5.08579 4.75 5.5V7.5C4.75 7.91421 5.08579 8.25 5.5 8.25H9.5C10.4665 8.25 11.25 7.4665 11.25 6.5zM9.5 6.25C9.63807 6.25 9.75 6.36193 9.75 6.5 9.75 6.63807 9.63807 6.75 9.5 6.75H6.25V6.25H9.5zM12.75 6.5C12.75 5.5335 13.5335 4.75 14.5 4.75H18.5C18.9142 4.75 19.25 5.08579 19.25 5.5V7.5C19.25 7.91421 18.9142 8.25 18.5 8.25H14.5C13.5335 8.25 12.75 7.4665 12.75 6.5zM14.5 6.25C14.3619 6.25 14.25 6.36193 14.25 6.5 14.25 6.63807 14.3619 6.75 14.5 6.75H17.75V6.25H14.5z"
+                        clip-rule="evenodd"></path>
+                    <path fill="#343A40" fill-rule="evenodd"
+                        d="M6.25 3.5C6.25 3.08579 5.91421 2.75 5.5 2.75 3.42893 2.75 1.75 4.42893 1.75 6.5 1.75 8.57107 3.42893 10.25 5.5 10.25 5.91421 10.25 6.25 9.91421 6.25 9.5V3.5zM4.75 4.37803V8.62197C3.87611 8.31309 3.25 7.47966 3.25 6.5 3.25 5.52034 3.87611 4.68691 4.75 4.37803zM17.75 3.5C17.75 3.08579 18.0858 2.75 18.5 2.75 20.5711 2.75 22.25 4.42893 22.25 6.5 22.25 8.57107 20.5711 10.25 18.5 10.25 18.0858 10.25 17.75 9.91421 17.75 9.5V3.5zM19.25 4.37803V8.62197C20.1239 8.31309 20.75 7.47966 20.75 6.5 20.75 5.52034 20.1239 4.68691 19.25 4.37803z"
+                        clip-rule="evenodd"></path>
+
+                </svg>
+                <a href="#" target="_blank">IEMs</a>
+            </div>
+            <div class="image-with-text d-flex d-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 381.73 549.2"
+                    id="headphones">
+                    <g data-name="Layer 2">
+                        <g data-name="Layer 1">
+                            <path fill="#37475c"
+                                d="M355.76,341.07c-17.08-23.46-39.94-36.38-64.36-36.38a68.89,68.89,0,0,0-16.09,1.91l-.31,0V273.22a28.33,28.33,0,0,0,22.67-27.72V232.21H299a21.61,21.61,0,0,0,21.59-21.59V116.81c0-29.62-7.89-57.77-22.21-79.25-7.52-11.28-16.47-20.26-26.61-26.69A67,67,0,0,0,235.41,0H137.24a67.1,67.1,0,0,0-36.37,10.87C90.74,17.3,81.79,26.28,74.27,37.56,60,59,52.06,87.19,52.06,116.81v93.81a21.61,21.61,0,0,0,18.18,21.3V245.5a28.34,28.34,0,0,0,22.67,27.72v38.42L86,311.07h-.37C38.41,311.06,0,363,0,426.94S38.41,542.83,85.61,542.83l.37,0L132.89,539c1.25-.06,2.53-.16,3.82-.31,17.47-2,34-11.57,47.23-27.07,11.89,14.78,26.45,24.56,42.43,28.38l.37.08,50.56,7.67a68.52,68.52,0,0,0,14.1,1.47c24.42,0,47.28-12.92,64.36-36.38,16.75-23,26-53.5,26-85.88S372.51,364.07,355.76,341.07ZM210.81,502.13H198.14c-4,0-8.59-1.6-12.36-3.37a109.06,109.06,0,0,1-8.45-15.2c-7.72-16.91-11.81-36.49-11.81-56.62s4.09-39.69,11.81-56.62a109.07,109.07,0,0,1,10.39-18.06c12.38-17.28,28.71-28.12,46-30.53l14.15-2A99.28,99.28,0,0,0,227,341.07c-16.75,23-26,53.49-26,85.87,0,25.79,5.87,50.37,16.71,70.93C215.49,501.79,210.81,502.13,210.81,502.13ZM102.54,365c31.32-25.18,56,7.55,61.18,15.35a150.52,150.52,0,0,0-7.26,46.59c0,21.42,4.37,42.3,12.63,60.39,0,.09.08.18.13.27-9.7,10.42-21.62,16.12-34,16.12-30.59,0-55.47-34.44-55.47-76.78C79.79,401.53,88.76,379,102.54,365Zm33.82-49.82-.31,0c-.93-.1-1.86-.17-2.84-.23l-6.78-.55V273.22A28.34,28.34,0,0,0,149.1,245.5V231.8a21.62,21.62,0,0,0,17.44-21.18V116.81c0-22.17,4.78-43.79,13.54-61.73C189.93,71.25,196,93,196,116.82v93.8a21.61,21.61,0,0,0,21.59,21.59h1.26V245.5a28.33,28.33,0,0,0,22.66,27.72v38.24l-9,1.3c-18.1,2.52-35.13,12.95-48.5,29.53C170.66,326.66,153.93,317.08,136.36,315.18ZM251.85,310V288.11a6.4,6.4,0,1,1,12.79,0v20Zm36.76-64.47a19.24,19.24,0,0,1-19.22,19.21H247.1a19.22,19.22,0,0,1-16.51-9.42h6.68a3.46,3.46,0,0,0,3.22-4.74,12.49,12.49,0,0,1-.86-5.26V232.21h49ZM61.12,210.62V116.81c0-27.85,7.35-54.22,20.69-74.23,6.81-10.21,14.86-18.31,23.92-24.06a57.28,57.28,0,0,1,63,0c9.05,5.75,17.1,13.85,23.91,24.06C206,62.6,213.36,89,213.36,116.81v63.43a4.54,4.54,0,1,0,9.07,0V116.81c0-29.62-7.89-57.77-22.21-79.25-7.52-11.28-16.47-20.26-26.61-26.69-1-.63-2-1.23-3-1.8h64.81a58.18,58.18,0,0,1,31.51,9.45C276,24.27,284,32.37,290.84,42.58c13.34,20,20.68,46.38,20.68,74.23v93.81A12.53,12.53,0,0,1,299,223.15H217.56A12.53,12.53,0,0,1,205,210.62v-93.8c0-26.24-6.86-51-19.29-69.62-12.82-19.22-30-29.81-48.51-29.81S101.56,28,88.74,47.2C76.3,65.86,69.45,90.58,69.45,116.82v63.42a4.53,4.53,0,1,0,9.06,0V116.82a134.45,134.45,0,0,1,3.27-29.69c2.13-6.37,11.12-27.31,37.3-27.31,21.89,0,36.41,13,41.31,26.46a161.39,161.39,0,0,0-2.92,30.53v93.81A12.54,12.54,0,0,1,145,223.15H73.64A12.54,12.54,0,0,1,61.12,210.62ZM82,255.29H88a3.46,3.46,0,0,0,3.21-4.74,12.69,12.69,0,0,1-.86-5.26V232.21H140V245.5a19.23,19.23,0,0,1-19.21,19.21H98.52A19.2,19.2,0,0,1,82,255.29Zm21.25,32.82a6.41,6.41,0,0,1,6.4-6.4h0a6.41,6.41,0,0,1,6.4,6.4v25.41l-12.8-1Zm-17.84,32,16,1.3c-31.93,15.6-54.81,57-54.81,105.51,0,24,5.61,46.32,15.16,64.59.87,9.94-8.13,10.6-8.13,10.6H41c-3.88,0-8.21-1.47-11.89-3.15-12.46-19-20.08-44.31-20.08-72C9.06,368.13,43.3,320.26,85.43,320.13ZM135.7,529.66l-3.55.29c-.84,0-1.72.07-2.6.07-40.7,0-73.82-46.24-73.82-103.08s33.12-103.06,73.82-103.06c1,0,2,0,3,.08l2.76.23h0c15.91,1.72,31.11,10.79,43.1,25.61a118.07,118.07,0,0,0-7.73,13.42C160.53,352.73,148.13,347,135.26,347c-32.33,0-58.64,35.86-58.64,79.93s26.31,79.94,58.64,79.94c12.87,0,25.27-5.72,35.42-16.21a115.52,115.52,0,0,0,7.73,13.42C166.51,518.79,151.45,527.84,135.7,529.66Zm155.7,9.88c-44.49,0-80.68-50.51-80.68-112.6s36.19-112.6,80.68-112.6,80.68,50.52,80.68,112.6S335.89,539.54,291.4,539.54Z">
+                            </path>
+                            <path fill="#37475c"
+                                d="M299.71,347c-32.33,0-58.64,35.86-58.64,79.93s26.31,79.94,58.64,79.94,58.64-35.86,58.64-79.94S332,347,299.71,347Zm0,156.71c-30.59,0-55.47-34.44-55.47-76.78s24.88-76.77,55.47-76.77,55.47,34.44,55.47,76.77S330.3,503.72,299.71,503.72Z">
+                            </path>
+                        </g>
+                    </g>
+                </svg>
+                <a href="#" target="_blank">Headphones</a>
+            </div>
+            <div class="image-with-text d-flex d-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" enable-background="new 0 0 24 24"
+                    viewBox="0 0 24 24" id="cable">
+                    <path fill="#5c6a74"
+                        d="M12.5 4.5v1.25c0 .83-.67 1.5-1.5 1.5H7c-.55 0-1.04-.3-1.29-.75C5.57 6.28 5.5 6.03 5.5 5.75V4.5c0-.28.07-.53.21-.75C5.96 3.3 6.45 3 7 3h4C11.83 3 12.5 3.67 12.5 4.5zM18.5 18.25v1.25c0 .28-.07.53-.21.75C18.04 20.7 17.55 21 17 21h-4c-.83 0-1.5-.67-1.5-1.5v-1.25c0-.83.67-1.5 1.5-1.5h4c.55 0 1.04.3 1.29.75C18.43 17.72 18.5 17.97 18.5 18.25z">
+                    </path>
+                    <path fill="#2e3b41"
+                        d="M5.5 5.75c0 .28.07.53.21.75H4c-.55 0-1-.45-1-1V4.75c0-.55.45-1 1-1h1.71C5.57 3.97 5.5 4.22 5.5 4.5V5.75zM21 18.5v.75c0 .55-.45 1-1 1h-1.71c.14-.22.21-.47.21-.75v-1.25c0-.28-.07-.53-.21-.75H20C20.55 17.5 21 17.95 21 18.5z">
+                    </path>
+                    <path fill="#0b0d0c" d="M21,8.56c0,2.17-1.77,3.94-3.94,3.94H6.94C5.32,12.5,4,13.82,4,15.44s1.32,2.94,2.94,2.94h4.56v1H6.94
+                C4.77,19.38,3,17.61,3,15.44c0-2.17,1.77-3.94,3.94-3.94h10.12c1.62,0,2.94-1.32,2.94-2.94s-1.32-2.94-2.94-2.94H12.5v-1h4.56
+                C19.23,4.62,21,6.39,21,8.56z"></path>
+                </svg>
+                <a href="#" target="_blank">Cables</a>
+            </div>
+            <div class="image-with-text d-flex d-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 32 32" id="cassette">
+                    <path fill="#f47321"
+                        d="M28.5 7h-25c-.6 0-1 .4-1 1v16c0 .6.4 1 1 1h25c.6 0 1-.4 1-1V8c0-.6-.4-1-1-1zM11 19c-.8 0-1.5-.7-1.5-1.5S10.2 16 11 16s1.5.7 1.5 1.5S11.8 19 11 19zm10 0c-.8 0-1.5-.7-1.5-1.5S20.2 16 21 16s1.5.7 1.5 1.5S21.8 19 21 19z">
+                    </path>
+                    <path fill="#ed5c23"
+                        d="M4.5 15V7h-1c-.6 0-1 .4-1 1v16c0 .6.4 1 1 1h25c.6 0 1-.4 1-1v-1h-17c-4.4 0-8-3.6-8-8z">
+                    </path>
+                    <path fill="#f0c9ae"
+                        d="M21.8 14H4.5v6l3 3h17l3-3v-6h-5.7zM11 19c-.8 0-1.5-.7-1.5-1.5S10.2 16 11 16s1.5.7 1.5 1.5S11.8 19 11 19zm10 0c-.8 0-1.5-.7-1.5-1.5S20.2 16 21 16s1.5.7 1.5 1.5S21.8 19 21 19z">
+                    </path>
+                    <path fill="#e2b698" d="M15.7 21H9.9c-.9 0-1.8-.4-2.4-1-.6-.6-1-1.5-1-2.4V14h-2v6l3 3h17l2-2H15.7z">
+                    </path>
+                    <path fill="#607d95"
+                        d="M19.5 17.5c0-.8.7-1.5 1.5-1.5H11c.8 0 1.5.7 1.5 1.5S11.8 19 11 19h10c-.8 0-1.5-.7-1.5-1.5z">
+                    </path>
+                    <path fill="#3c3b41"
+                        d="M15.2 16H11c.8 0 1.5.7 1.5 1.5S11.8 19 11 19h4.2c.2-.5.3-1 .3-1.5s-.1-1-.3-1.5z"></path>
+                    <path fill="#ed5c23" d="M23.8 11H8.3L7 7h18z"></path>
+                    <path fill="#e55123" d="M9.3 8.1 9 7H7l1.3 4h15.5l.5-1.5h-13c-1 0-1.7-.6-2-1.4z"></path>
+                    <path fill="#004463"
+                        d="M28.5 25.5h-25c-.8 0-1.5-.7-1.5-1.5V8c0-.8.7-1.5 1.5-1.5h25c.8 0 1.5.7 1.5 1.5v16c0 .8-.7 1.5-1.5 1.5zm-25-18c-.3 0-.5.2-.5.5v16c0 .3.2.5.5.5h25c.3 0 .5-.2.5-.5V8c0-.3-.2-.5-.5-.5h-25z">
+                    </path>
+                    <path fill="#004463"
+                        d="M23.8 11.5H8.3c-.2 0-.4-.1-.5-.4l-1.3-4c0-.2 0-.3.1-.4.1-.1.2-.2.4-.2h18c.2 0 .3.1.4.2.1.1.1.3.1.4l-1.3 4c0 .3-.2.4-.4.4zm-15.2-1h14.8l.9-3H7.7l.9 3zm2.4 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0-3c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z">
+                    </path>
+                    <circle cx="4.5" cy="9" r=".5" fill="#004463"></circle>
+                    <path fill="#004463"
+                        d="M9.5 9.5c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h1c.3 0 .5.2.5.5s-.2.5-.5.5h-1zm1 12c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h1c.3 0 .5.2.5.5s-.2.5-.5.5h-1zm10 0c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h1c.3 0 .5.2.5.5s-.2.5-.5.5h-1z">
+                    </path>
+                    <circle cx="12.5" cy="9" r=".5" fill="#004463"></circle>
+                    <path fill="#004463" d="M22.5 8.5h-1c-.3 0-.5.2-.5.5s.2.5.5.5h1c.3 0 .5-.2.5-.5s-.2-.5-.5-.5z">
+                    </path>
+                    <circle cx="19.5" cy="9" r=".5" fill="#004463"></circle>
+                    <circle cx="27.5" cy="9" r=".5" fill="#004463"></circle>
+                    <circle cx="4.5" cy="23" r=".5" fill="#004463"></circle>
+                    <circle cx="27.5" cy="23" r=".5" fill="#004463"></circle>
+                    <path fill="#004463"
+                        d="M21 19.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0-3c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z">
+                    </path>
+                    <path fill="#004463"
+                        d="M24.5 23.5h-17c-.1 0-.3-.1-.4-.1l-3-3c0-.1-.1-.3-.1-.4v-6c0-.3.2-.5.5-.5h23c.3 0 .5.2.5.5v6c0 .1-.1.3-.1.4l-3 3c-.1 0-.3.1-.4.1zm-16.8-1h16.6l2.7-2.7v-5.3H5v5.3l2.7 2.7z">
+                    </path>
+                    <path fill="#004463"
+                        d="M21 19.5H11c-1.1 0-2-.9-2-2s.9-2 2-2h10c1.1 0 2 .9 2 2s-.9 2-2 2zm-10-3c-.6 0-1 .4-1 1s.4 1 1 1h10c.6 0 1-.4 1-1s-.4-1-1-1H11z">
+                    </path>
+                    <path fill="#004463"
+                        d="M15.2 19.5H11c-1.1 0-2-.9-2-2s.9-2 2-2h4.2c.2 0 .4.1.5.3.2.6.3 1.1.3 1.7s-.1 1.1-.3 1.7c-.1.2-.3.3-.5.3zm-4.2-3c-.6 0-1 .4-1 1s.4 1 1 1h3.9c.1-.3.1-.7.1-1s0-.7-.1-1H11z">
+                    </path>
+
+                </svg>
+                <a href="#" target="_blank">Music Players</a>
+            </div>
+            <div class="image-with-text d-flex d-col">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill-rule="evenodd" clip-rule="evenodd"
+                    image-rendering="optimizeQuality" shape-rendering="geometricPrecision"
+                    text-rendering="geometricPrecision" viewBox="0 0 1707 1707" id="music-speaker">
+                    <path fill="#5382aa"
+                        d="M929 518l0 0zm0 -82c-54,-54 -136,28 -82,82 23,22 60,22 82,0 23,-23 23,-60 0,-82z"></path>
+                    <path fill="#fcd786"
+                        d="M958 546c-62,62 -168,18 -168,-69 0,-54 44,-98 98,-98 87,0 131,105 70,167zm64 -203c-119,-119 -323,-34 -323,134 0,168 204,252 323,134 74,-74 74,-194 0,-268z">
+                    </path>
+                    <path fill="#5382aa"
+                        d="M1050 639c-144,144 -391,41 -391,-162 0,-127 103,-230 229,-230 204,0 307,248 162,392zm219 -476l-765 0 0 1381 765 0 0 -1381zm-689 990c0,-169 137,-307 307,-307 272,0 409,331 216,524 -192,192 -523,55 -523,-217z">
+                    </path>
+                    <path fill="#fcd786"
+                        d="M1075 964c-167,-167 -455,-48 -455,189 0,236 288,356 455,188 104,-104 104,-273 0,-377zm-188 62c112,0 169,137 89,217 -79,79 -216,22 -216,-90 0,-70 57,-127 127,-127z">
+                    </path>
+                    <path fill="#5382aa"
+                        d="M948 1091c-54,-54 -148,-15 -148,62 0,77 94,116 148,61 34,-34 34,-89 0,-123z">
+                    </path>
+                    <path fill="#3d3d3d" fill-rule="nonzero"
+                        d="M451 123l805 0c11,0 20,8 20,20l0 1421c0,11 -9,20 -20,20l-805 0c-11,0 -20,-9 -20,-20l0 -1421c0,-12 9,-20 20,-20zm-95 1079c21,21 -21,67 -51,-6l0 0c-29,-70 30,-134 51,-113 17,17 -8,32 -14,49 -10,24 -5,51 14,70zm995 -771c-19,-18 10,-47 28,-28 68,68 4,180 -28,147 -22,-22 19,-30 19,-73 0,-18 -7,-34 -19,-46zm70 -70c-19,-19 10,-47 28,-28 80,80 80,208 0,287 -18,19 -47,-9 -28,-28 64,-64 64,-167 0,-231zm70 -70c-19,-18 10,-47 28,-28 118,118 118,309 0,427 -18,19 -47,-9 -28,-28 102,-102 102,-268 0,-371zm70 -70c-19,-18 10,-47 28,-28 157,156 157,411 0,567 -18,19 -47,-9 -28,-28 141,-141 141,-370 0,-511zm-1205 301c21,22 -21,67 -51,-6l0 0c-29,-70 30,-134 51,-113 17,17 -8,32 -14,49 -10,24 -5,51 14,70zm-70 70c18,19 -10,47 -29,28 -79,-79 -79,-207 0,-287 19,-19 47,10 29,28 -64,64 -64,167 0,231zm-70 70c18,19 -10,47 -29,28 -117,-118 -117,-309 0,-427 19,-19 47,10 29,28 -103,103 -103,269 0,371zm-70 70c18,19 -10,47 -29,28 -156,-156 -156,-411 0,-567 19,-19 47,10 29,28 -141,141 -141,370 0,511zm709 -353c87,0 131,105 69,167l0 0c-61,62 -167,18 -167,-69 0,-54 44,-98 98,-98zm41 57c-54,-54 -136,28 -82,82 23,22 59,22 82,0l0 0c23,-23 23,-60 0,-82zm-41 -189c204,0 306,248 162,392 -144,144 -391,41 -391,-162 0,-127 102,-230 229,-230zm134 96c-119,-119 -323,-34 -323,134 0,168 204,252 323,134 74,-74 74,-194 0,-268zm-136 503c272,0 410,331 217,524 -193,192 -523,55 -523,-217 0,-169 137,-307 306,-307zm189 118c-168,-167 -455,-48 -455,189 0,236 287,356 455,188 104,-104 104,-273 0,-377zm-189 62c113,0 170,137 90,217 -80,79 -216,22 -216,-90 0,-70 56,-127 126,-127zm62 65c-55,-54 -148,-15 -148,62 0,77 93,116 148,61 34,-34 34,-89 0,-123zm436 21c-19,-19 10,-47 28,-29 68,68 4,180 -28,148 -22,-22 19,-30 19,-74 0,-18 -7,-34 -19,-45zm70 -70c-19,-19 10,-47 28,-28 80,79 80,207 0,287 -18,18 -47,-10 -28,-28 64,-64 64,-168 0,-231zm70 -70c-19,-19 10,-47 28,-29 118,118 118,310 0,428 -18,18 -47,-10 -28,-29 102,-102 102,-268 0,-370zm70 -70c-19,-19 10,-47 28,-29 157,157 157,411 0,568 -18,18 -47,-10 -28,-29 141,-141 141,-369 0,-510zm-1275 371c18,18 -10,46 -29,28 -79,-80 -79,-208 0,-287 19,-19 47,9 29,28 -64,64 -64,167 0,231zm-70 69c18,19 -10,47 -29,29 -117,-118 -117,-310 0,-428 19,-18 47,10 29,29 -103,102 -103,268 0,370zm-70 70c18,19 -10,47 -29,29 -156,-157 -156,-411 0,-568 19,-18 47,10 29,29 -141,141 -141,369 0,510zm1090 -1249l-765 0 0 1381 765 0 0 -1381z">
+                    </path>
+                </svg>
+                <a href="#" target="_blank">Speakers</a>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    <section>
+        <h3 class="headee" style="font-family: 'Gabarito', sans-serif;">Choose from Brands</h3>
+        <div class="brands d-flex">
+
+            <div class="brand-parent">
+                <a href="#" target="_blank"><img
+                        src="https://www.theaudiostore.in/cdn/shop/files/Blon_IEM_Earphones_in_ear_online_in_India.jpg?v=1634975162"
+                        alt=""></a>
+                <a href="#" target="_blank"><img
+                        src="https://www.theaudiostore.in/cdn/shop/files/KZ_Earphones_In_Ear_online_In_India.jpg?v=1634971090"
+                        alt=""></a>
+                <a href="#" target="_blank"><img
+                        src="https://www.theaudiostore.in/cdn/shop/files/Buy_sennheiser_headphones_earphones_true_wireless_earbuds_online_in_India.jpg?v=1614295832"
+                        alt=""></a>
+                <a href="#" target="_blank"><img
+                        src="data:image/png;base64,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"
+                        class="moondrop" alt=""></a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="newsletter d-flex">
+            <img src="https://www.headphonezone.in/cdn/shop/files/Headphone-Zone-Popup-Newsletter-4_1.png?v=1621679456&width=600"
+                alt="">
+            <div class="textt-div d-flex">
+                <svg role="presentation" fill="none" focusable="false" stroke-width="1.5" width="50" height="50"
+                    class="d-col" viewBox="0 0 24 24">
+                    <path d="M16.994 12a4.946 4.946 0 1 1-9.89 0 4.946 4.946 0 0 1 9.891 0v0h-.001Z"
+                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path
+                        d="M16.994 12v2.143c0 5.753 9.017.329 4.285-7.483a10.864 10.864 0 0 0-9.312-5.374 10.715 10.715 0 1 0 4.154 20.605"
+                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span class="text-gradient d-flex d-col"
+                    style="--gradient: linear-gradient(260deg, rgba(3, 4, 94, 1) 15%, rgba(255, 0, 110, 1) 85%)">Subscribe
+                    to our Newsletter
+                </span>
+                <input type="text" placeholder="E-mail">
+                <button class="subscribe-button" type="button">Subscribe</button>
+            </div>
+        </div>
+    </section>
+    
+</body>
+
+</html>

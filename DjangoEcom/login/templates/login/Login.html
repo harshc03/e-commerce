@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Your description here" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup Form HTML CSS | CodingNepal</title>
+    <link rel="stylesheet" href="{% static 'login/Login-Style.css' %}" />
+</head>
+<body>
+    <section class="wrapper">
+        <div class="form signup">
+            <header>Sign Up</header>
+            <form action="{% url 'registerPage' %}" method="post">
+                {% csrf_token %}
+                <!-- Signup form inputs -->
+                <input type="text" name="full_name" placeholder="Full name" required />
+                <input type="text" name="email" placeholder="Email address" required />
+                <input type="password" name="password" placeholder="Password" required />
+                <input type="password" name="re-password" placeholder="Password" required />
+                <input type="text" name="phone" placeholder="Phone" required>
+                <input type="submit" value="Signup" class="signup-btn" />
+            </form>
+        </div>
+
+        <div class="form login">
+            <header>Login</header>
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <!-- Login form inputs -->
+                <input type="text" name="email" placeholder="Email address" required />
+                <input type="password" name="password" placeholder="Password" required />
+                <a href="#">Forgot password?</a>
+                <input type="submit" value="Login"   />
+            </form>
+        </div>
+    </section>
+
+    <script>
+        const wrapper = document.querySelector(".wrapper");
+        const signupHeader = document.querySelector(".signup header");
+        const loginHeader = document.querySelector(".login header");
+
+        loginHeader.addEventListener("click", () => {
+            wrapper.classList.add("active");
+        });
+
+        signupHeader.addEventListener("click", () => {
+            wrapper.classList.remove("active");
+        });
+    </script>
+</body>
+</html>

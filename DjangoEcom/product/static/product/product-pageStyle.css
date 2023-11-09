@@ -1,0 +1,351 @@
+
+/* @font-face {
+    font-family: heading_font;
+    src: url("assets/Fracktif-bold.otf");
+  } */
+  @font-face {
+    font-family: heading_font;
+    src: url("assets/Fracktif-bold.otf");
+  }
+  @font-face {
+    font-family: rupee_font;
+    src: url("assets/VLNL\ NeueSardinesRoughW00Eleven.ttf");
+  }
+  @font-face {
+    font-family: product-des-head;
+    src: url("assets/Fontspring-DEMO-lupio-bold.otf");
+  }
+  @font-face {
+    font-family: product-des-p;
+    src: url("assets/Fontspring-DEMO-lupio-regular.otf");
+  }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* background-color:lightblue; */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+.navbar {
+    opacity: 0.8;
+    background-color: #03045e;
+    padding: 1.2rem;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+}
+
+.nav-links>li {
+    list-style-type: none;
+    margin: 10px;
+}
+
+.nav-links>li>a {
+    text-decoration: none;
+    color: white;
+}
+
+#search input {
+    padding: 8px;
+    margin: 5px;
+    font-size: 14px;
+    background-color: #03045e;
+    border: none;
+    outline: none;
+    color: #fff;
+    
+}
+#search input::placeholder{
+    color: white;
+}
+#search {
+    border-bottom: 2px solid #ccc;
+    margin: 0 10px 0 10px;
+}
+
+/* #search input:focus, #search i:focus {
+    border-bottom: 2px solid white; 
+} */
+.dropdown-category {
+    display: none;
+    position: absolute;
+}
+
+.dropdown {
+    position: relative;
+}
+.dropdown-category li a{
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+
+}
+.dropdown-category li{
+    
+    list-style-type: none;
+    padding: 10px;
+    background-color: #03045e;
+}
+.dropdown-category li:hover a{
+    color: black;
+}
+.dropdown-category li:hover {
+    color: black;
+    background-color: #e2faff;
+    font-weight: 600;
+}
+.dropdown:hover .dropdown-category {
+    display: block;
+}
+ul {
+    list-style-type: none;
+  }
+.hero-section{
+    margin: 40px;
+    margin-top: 110px;
+    background-color:#c1f4fd;
+    border-radius: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.image-section{
+    
+    flex:1;
+    width: 55%;
+    
+    /* background-color: orangered; */
+    /* border-radius: 50px; */
+}
+.text-section{
+    flex:1;
+    width: 50%;
+    /* background-color: aqua; */
+
+}
+
+.piclist {
+    margin-top: 5px;
+}
+
+.piclist li {
+    margin-top: 5px;
+    cursor: pointer;
+    width: 102px;
+    height: 100px;margin-left: 30px;
+    
+}
+
+.piclist li img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.focus-image>{
+    height: 50%;
+}
+
+.focus-image {
+    margin-left: 20px;}
+
+.my_pic {
+    width: 100%;
+    height: 85%;
+    border-radius: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.text-section>h3{
+    font-family: heading_font;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-left: 100px;
+    font-size: 50px;
+}
+
+.text-section>h6{
+    font-family: 'Poppins';
+    /* font-weight: 700; */
+    margin-top: 5px;
+    margin-left: 105px;
+    font-size: 14px;
+    color:gray;
+}
+.noone{
+    margin-top: 8px;
+    margin-left: 105px;
+    background-color: red;
+    border-radius: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: white;
+}
+.linkz{
+    color: grey;
+}
+
+.line{
+    margin-left: 80px;
+    margin-top: 30px;
+    /* color: red; */
+    padding: 4px;
+    border: 6px darkblue dotted;
+    margin-right: 190px;
+}
+
+.option {
+    display: block;
+    justify-content: center;
+    margin-left: 105px;
+    margin-top: 20px;
+    margin-right: 400px;
+    color: darkblue;
+    border: 1.5px darkblue solid;
+    border-radius: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cart{
+    margin-top: 250px;
+    background-color: #03045e;
+    color: white;
+    margin-left: 105px;
+    text-align: center;
+    padding-left: 150px;
+    padding-right: 150px;
+    text-decoration: none;
+    border-radius: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* style-type: none; */
+}
+
+.cart :hover{
+    background-color: aquamarine;
+    color: #000;
+}
+
+.div{
+    background-color: #03045e;
+    color: white;
+    margin-top: 30px;
+    margin-left:105px;
+    border-radius: 10px;
+    padding:20px;
+}
+.div>input{
+    background-color: #03045e;
+    border: none;
+    border-bottom: white solid 1px;
+    color: white;
+    
+}
+::placeholder{
+    color: rgb(235, 233, 233);
+}
+.pincode-button{
+    color: white;
+    background-color:#03045e ;
+    border: none;
+    cursor: pointer;
+    
+
+}
+.div2{
+    margin: 0px;
+}
+.div3>a{
+    margin: 0px;
+    color: #fff;
+    text-decoration: none;
+}
+.div3{
+    margin-top: 30px;
+    margin-left: 5px;
+    background-color: #03045e;
+    color: #fff;
+    border-radius: 9px;
+    padding:20px;
+}
+
+.money{
+    margin-left: 110px;
+    margin-top: 70px;
+    font-family: product-des-head;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.product-description{
+    margin: 40px;
+    margin-top: 40px;
+    background-color:#c1f4fd;
+    border-radius: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.img1{
+    width:25% ;
+    border-radius: 10px;
+    margin-left: 30px;
+    height: 25rem;
+}
+.text-section-1>h3{
+    font-family: product-des-head;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+.text-section-1{
+    margin-left: 15px;
+}
+.text-section-1>p{
+    font-family: product-des-p;
+    margin-right: 30px;
+}
+.img2{
+    width:1000px ;
+    border-radius: 10px;
+    /* margin-left: 30px; */
+    height: 20rem;
+    margin-right: 30px;
+}
+.text-section-2>h3{
+    font-family: product-des-head;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+.text-section-2{
+    margin-left: 15px;
+}
+.text-section-2>p{
+    font-family: product-des-p;
+    margin-right: 30px;
+}
+.text-section-3>h3{
+    font-family: product-des-head;
+    font-size: 35px;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    /* padding-bottom: 10px; */
+}
+.logozz{
+    margin-left: 550px;
+}

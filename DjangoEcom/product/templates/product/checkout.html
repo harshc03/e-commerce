@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Placed</title>
+</head>
+<body>
+    <h1>Your Order Has Been Placed Successfully</h1>
+    <p>Thank you for shopping with us!</p>
+    <script>
+        setTimeout(function() {
+            window.location.href = "{% url 'product_list' %}";  // Replace 'product-list' with the actual URL name for your product list page
+        }, 5000);  // 5000 milliseconds = 5 seconds
+    </script>
+</body>
+</html>

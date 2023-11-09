@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'product/product-listStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'product/utilities.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="hero">
+        <nav class="d-flex navbar">
+            <h2><span><i class="fa-solid fa-1" id="i-icon"></i></span>Stop</h2>
+            <div class="d-flex ">
+                <ul class="d-flex nav-links align-items-center">
+                    <li><a href="">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Categories</a>
+                        <ul class="dropdown-category">
+                            <li><a href="../e-commerce/mens.html">IEMs</a></li>
+                            <li><a href="#">DAC</a></li>
+                            <li><a href="#">Headphones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Discover</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li class="d-flex align-items-center">
+                        <div id="search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" placeholder="search products & more">
+                        </div>
+                        
+                    </li>
+                    <li><a href="{% url 'view_cart' %}" id="cart-link"><i class="fa-solid fa-heart fa-xl" style="color: #ffffff;"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-circle-user fa-xl" style="color: #ffffff;"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-cart-shopping fa-xl" style="color: #fcfcfc;"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-share-from-square fa-xl" style="color: #ffffff;"></i></a></li>
+                </ul>
+                
+            </div>
+        </nav>
+        <div class="content d-flex d-col">
+            <h2>Portable Amps & DACs</h2>
+            <p>Explore the finest collection of portable Amps & DACs to start your audiophile journey</p>
+            <div class="d-flex"><a href="#Shop Now" class="btn btn-success">Shop Now</a>
+                <a href="#Find More" class="btn border-success">Find More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands d-flex">
+        <ul class="d-flex">
+            <li><a href="#">
+                    Blon
+                </a>
+            </li>
+            <li><a href="#">Sony</a></li>
+            <li><a href="#">KZ</a></li>
+            <li><a href="#">Hi-Fi Man</a></li>
+            <li><a href="#">Chord</a></li>
+        </ul>
+    </section>
+
+    <section class="d-flex d-col featured-products">
+        <h2>Featured Products</h2>
+        <div class="d-flex prod-row-align card">
+            {% for product in products %}
+                <div>
+                    <a href="{% url 'product_page' product.id %}" class="d-flex d-col text-decor-none align-center">
+                        <img src="{{ product.first_image }}" alt="{{ product.name }}">
+                        <h4>{{ product.name }}</h4>
+                        <span>${{ product.price }}</span>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+    
+    <section class="d-flex quality d-col">
+        <div>
+            <h2>Why Us?</h2>
+        </div>
+        <div class="d-flex quality">
+            <div class="d-flex d-col">
+                <i class="fa-solid fa-earth-americas fa-2xl" id="align-padding"></i>
+                <h4>Worldwide Shipping</h4>
+                <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+            <div class="d-flex d-col">
+                <i class="fa-solid fa-shirt fa-2xl" id="align-padding"></i>
+                <h4>Best Quality</h4>
+                <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+            <div class="d-flex d-col">
+                <i class="fa-solid fa-cart-shopping fa-2xl" id="align-padding"></i>
+                <h4>Best Offers</h4>
+                <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+            <div class="d-flex d-col">
+                <i class="fa-solid fa-lock fa-2xl" id="align-padding"></i>
+                <h4>Secure Payments</h4>
+                <p>It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="d-flex about">
+        <div class="bg left">
+            <img src="https://images.unsplash.com/photo-1621335829175-95f437384d7c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGFib3V0fGVufDB8MXwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
+        </div>
+        <div class="d-flex d-col right">
+            <h2>About US</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam est sapiente facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a href="#Learn More" class="btn abt-btn-width border-success">Learn More</a>
+        </div>
+    </section>
+    <br>
+    <div class="contact-head">
+        <h1>Contact Us!!</h1>
+    </div>
+    <section class="contact-us d-flex d-col">
+        
+        <div class="d-flex d-col ">
+            <h2 class="padd-down">Get in Touch</h2>
+            <p class="padd-down"><i class="fa-solid fa-phone" style="color: #000000;"></i>Phone:999999990</p>
+            <p class="padd-down"><i class="fa-solid fa-envelope" style="color: #000000;"></i>Email: abc@gmail.com</p>
+            <p class="padd-down"><i class="fa-solid fa-location-dot" style="color: #000000;"></i>Address : Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+        <form class="d-flex" action="">
+            <div class="form-left">
+                <div class="d-flex d-col form-padd">
+                    <label for="firstname" class="padding">First Name</label>
+                    <input type="text" name="fname" id="firstname" class="textfield-padd">
+                </div>
+                <div class="d-flex d-col form-padd">
+                    <label for="lastname" class="padding">Last Name</label>
+                    <input type="text" name="lname" id="lastname" class="textfield-padd">
+                </div>
+                <div class="d-flex d-col form-padd">
+                    <label for="email-id" class="padding">Email</label>
+                    <input type="email" name="email" id="email-id" class="textfield-padd">
+                </div>
+            </div>
+            <div class="form-right">
+                <div class="d-flex d-col form-padd">
+                    <label for="message" class="padding">Message</label>
+                    <input type="text" name="msg" id="message" class="textfield">
+                </div>
+            </div>
+        </form>
+        <a href="#Find More" class="cont-btn btn-success">Find More</a>
+    </section>
+</body>
+<script>
+    document.getElementById('cart-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        var cartUrl = this.getAttribute('href');
+        if (cartUrl) {
+            window.location.href = cartUrl; // Redirect to the cart page
+        }
+    });
+</script>
+
+</html>

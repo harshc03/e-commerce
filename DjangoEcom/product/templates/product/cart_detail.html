@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'product/cartStyle.css' %}">
+    <style>
+        #successModal{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+<br><br>
+  <div class="shopping-cart">
+      <div class="column-labels">
+          <label class="product-image">Image</label>
+          <label class="product-details">Product</label>
+          <label class="product-price">Price</label>
+          <label class="product-quantity">Quantity</label>
+          <label class="product-removal">Remove</label>
+          <label class="product-line-price">Total</label>
+      </div>
+      <br>
+      {% for cart_item in cart_items %}
+      <div class="product">
+          <div class="product-image">
+              <img src="{{ cart_item.product.image }}" alt="{{ cart_item.product.name }}">
+          </div>
+          <div class="product-details">
+            <br><br>
+              <div class="product-title">{{ cart_item.product.name }}</div>
+              <p class="product-description">{{ cart_item.product.description }}</p>
+          </div>
+          <br><br><br>
+          <div class="product-price">{{ cart_item.product.price }}</div>
+          <div class="product-quantity">
+              <input type="number" value="{{ cart_item.quantity }}" min="1" data-cart-item-id="{{ cart_item.id }}">
+          </div>
+          <div class="product-removal">
+            <a href="{% url 'remove_from_cart' %}?item_id={{ cart_item.id }}" class="remove-product">Remove</a>
+        </div>
+          <div class="product-line-price">{{ cart_item.total_price }}</div>
+      </div>
+      <br>
+      {% endfor %}
+
+      <div class="totals">
+        <div class="totals-item">
+            <label>Subtotal</label>
+            <div class="totals-value" id="cart-subtotal">{{ subtotal }}</div>
+        </div>
+      </div>
+      <button id="checkoutButton">Checkout</button>
+      {% comment %} <button class="checkout" id="out">Checkout</button> {% endcomment %}
+<div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Order Placed Successfully</h2>
+      <p>Your order has been successfully placed. Thank you for shopping with us!</p>
+    </div>
+  </div>
+  
+  </div>
+
+  {% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> {% endcomment %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.getElementById('checkoutButton').addEventListener('click', function() {
+            // Redirect to the checkout.html page
+            window.location.href = '{% url 'checkout_view' %}';
+        });
+        /* Set rates + misc */
+        var taxRate = 0.05;
+        var shippingRate = 15.00;
+        var fadeTime = 300;
+
+        var quantityInputs = document.querySelectorAll('.product-quantity input');
+        for (var i = 0; i < quantityInputs.length; i++) {
+            quantityInputs[i].addEventListener('change', function () {
+                updateQuantity(this);
+            });
+        }
+
+        var removeButtons = document.querySelectorAll('.product-removal a');
+        for (var i = 0; i < removeButtons.length; i++) {
+            removeButtons[i].addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent the default action of the link
+                removeItem(this);
+            });
+        }
+
+        function recalculateCart() {
+            var subtotal = 0;
+            var productRows = document.querySelectorAll('.product');
+
+            for (var i = 0; i < productRows.length; i++) {
+                var productRow = productRows[i];
+                var price = parseFloat(productRow.querySelector('.product-price').textContent);
+                var quantity = parseInt(productRow.querySelector('.product-quantity input').value);
+                var linePrice = price * quantity;
+                productRow.querySelector('.product-line-price').textContent = linePrice.toFixed(2);
+                subtotal += linePrice;
+                console.log(price,quantity,linePrice,subtotal)
+            }
+            var final=document.getElementById('cart-subtotal')
+            final.innerHTML=subtotal.toFixed(2);
+            final.style.display=block
+            /* Calculate totals */
+            var tax = subtotal * taxRate;
+            var shipping = (subtotal > 0 ? shippingRate : 0);
+            var total = subtotal + tax + shipping;
+
+            /* Update totals display */
+            var totalsValues = document.querySelectorAll('.totals-value');
+            for (var i = 0; i < totalsValues.length; i++) {
+                totalsValues[i].style.display = 'none';
+            }
+
+            {% comment %} document.getElementById('cart-subtotal').textContent = subtotal.toFixed(2); {% endcomment %}
+            {% comment %} console.log(document.getElementById('cart-subtotal').textContent = subtotal.toFixed(2)) {% endcomment %}
+            document.getElementById('cart-tax').textContent = tax.toFixed(2);
+            document.getElementById('cart-shipping').textContent = shipping.toFixed(2);
+            document.getElementById('cart-total').textContent = total.toFixed(2);
+
+            if (total == 0) {
+                document.querySelector('.checkout').style.display = 'none';
+            } else {
+                document.querySelector('.checkout').style.display = 'block';
+            }
+
+            for (var i = 0; i < totalsValues.length; i++) {
+                totalsValues[i].style.display = 'block';
+            }
+        }
+
+        /* Update quantity */
+        function updateQuantity(quantityInput) {
+            var productRow = quantityInput.closest('.product');
+            var price = parseFloat(productRow.querySelector('.product-price').textContent);
+            var quantity = parseInt(quantityInput.value);
+            var linePrice = price * quantity;
+
+            productRow.querySelector('.product-line-price').textContent = linePrice.toFixed(2);
+            recalculateCart();
+        }
+
+        /* Remove item from cart */
+        function removeItem(removeButton) {
+            var productRow = removeButton.closest('.product');
+            productRow.style.display = 'none';
+            recalculateCart();
+        }
+
+        /* Initial cart calculation */
+        recalculateCart();
+
+        document.querySelector('#out').addEventListener('click', function() {
+            var modal = document.getElementById('successModal');
+            var closeModal = document.getElementById('closeModal');
+
+            // Show the modal
+            modal.style.display = 'block';
+            console.log('Modal displayed.'); 
+
+            // Close the modal when the close button is clicked
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                console.log('Modal closed.'); 
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    console.log('Modal closed (clicked outside).'); // Add this line for debugging
+                }
+            });
+        });
+    </script>
+</body>
+
+
+</html>

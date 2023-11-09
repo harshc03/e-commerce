@@ -1,0 +1,339 @@
+@font-face {
+    
+    
+}
+@font-face {
+  font-family: rupee_font;
+  src: url("../assets/VLNL\ NeueSardinesRoughW00Eleven.ttf");
+}
+@font-face {
+  font-family: product-des-head;
+  src: url("../assets/Fontspring-DEMO-lupio-bold.otf");
+}
+@font-face {
+  font-family: product-des-p;
+  src: url("../assets/Fontspring-DEMO-lupio-regular.otf");
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: rgb(216, 216, 216);
+  color: #000;
+}
+
+.navbar {
+  opacity: 0.8;
+  background-color: #03045e;
+  padding: 1.2rem;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: 100vw;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+}
+
+.nav-links>li {
+  list-style-type: none;
+  margin: 10px;
+}
+
+.nav-links>li>a {
+  text-decoration: none;
+  color: white;
+}
+
+#search input {
+  padding: 8px;
+  margin: 5px;
+  font-size: 14px;
+  background-color: #03045e;
+  border: none;
+  outline: none;
+  color: #fff;
+
+}
+
+#search input::placeholder {
+  color: white;
+}
+
+#search {
+  border-bottom: 2px solid #ccc;
+  margin: 0 10px 0 10px;
+}
+
+/* #search input:focus, #search i:focus {
+  border-bottom: 2px solid white; 
+} */
+.dropdown-category {
+  display: none;
+  position: absolute;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-category li a {
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+
+}
+
+.dropdown-category li {
+
+  list-style-type: none;
+  padding: 10px;
+  background-color: #03045e;
+}
+
+.dropdown-category li:hover a {
+  color: black;
+}
+
+.dropdown-category li:hover {
+  color: black;
+  background-color: #CAF0F8;
+  font-weight: 600;
+}
+
+.dropdown:hover .dropdown-category {
+  display: block;
+}
+
+.heroimg {
+  width: 100vw;
+}
+
+.hero-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.herotext {
+  position: absolute;
+  top: 45%;
+  right: 16px;
+  /* font-family: heading_font; */
+  font-weight: bolder;
+  margin-right: 70px;
+  font-size: 45px;
+  font-family: 'Gabarito', sans-serif;
+}
+.herotext-tag{
+  position: absolute;
+  font-family: "Poppins",sans-serif;
+  top: 55%;
+  right: 90px;
+}
+.linkss{
+  position: absolute;
+  top: 61%;
+  right: 90px;
+  text-decoration: none;
+  background-color: #fff;
+  color: black;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 200px;
+}
+
+.text-gradient {
+  background-image: var(--gradient);
+  color: #0000;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: 'Gabarito', sans-serif;
+  font-size: 40px;
+}
+.first-div{
+  background-color: white;
+  margin: 25px;
+  border-radius: 30px;
+  
+}
+.img1-div{
+  width: 50%;
+}
+.imagee1{
+  width: 100%;
+  height: 85%;
+  margin: 10px;
+  border-radius: 20px;
+}
+.text-div-1{
+  width: 50%;
+  margin-left: 40px;
+  margin-top: 50px;
+}
+.text-div-1>p{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  margin-right: 80px;
+  margin-top: 15px;
+  font-size: 40px;
+}
+
+.second-div{
+  background-color: white;
+  margin: 25px;
+  border-radius: 30px;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+}
+.second-div>a{
+  
+  margin: 0px;
+  padding-top: 170px;
+  margin-right: 50px;
+  justify-content: space-evenly;
+}
+
+.image-with-text a {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #5382aa; 
+  font-weight: bolder;
+  text-align: center;
+}
+.headee{
+  margin-left: 37vw;
+  font-family: product-des-head;
+  font-size: 40px;
+}
+.brands>img{
+  width: 50%;
+  justify-content: center;
+}
+.moondrop{
+  width: 389px;
+  margin-left: 40px;
+}
+.brands{
+  background-color: white;
+  margin: 25px;
+  border-radius: 30px;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.brands img:hover {
+  transition: transform .2s;
+  transform: scale(1.2);
+}
+
+.newsletter{
+  background-color: white;
+  margin: 25px;
+  border-radius: 30px;
+  
+}
+.newsletter>img{
+  margin: 7px;
+  border-radius: 25px;
+}
+
+.cart{
+  margin-top: 250px;
+  background-color: #03045e;
+  color: white;
+  margin-left: 105px;
+  text-align: center;
+  padding-left: 150px;
+  padding-right: 150px;
+  text-decoration: none;
+  border-radius: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  /* style-type: none; */
+}
+
+/* Style the newsletter section */
+.newsletter {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Style the image */
+.newsletter img {
+  width: 600px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* Style the text and input container */
+.textt-div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the SVG icon */
+.textt-div svg {
+  width: 50px;
+  height: 50px;
+  fill: none;
+  stroke: #000; /* Change the stroke color as needed */
+}
+
+/* Style the "Subscribe to our Newsletter" text */
+.text-gradient {
+  --gradient: linear-gradient(260deg, rgba(3, 4, 94, 1) 15%, rgba(255, 0, 110, 1) 85%);
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 60px;
+  font-family: 'Gabarito', sans-serif;
+}
+
+/* Style the email input field */
+.textt-div input[type="text"] {
+  height: 50px;
+outline: none;
+border: none;
+padding: 0 15px;
+font-size: 16px;
+font-weight: 400;
+color: #333;
+border-radius: 8px;
+background: #fff;
+
+}
+
+/* Style the Subscribe button */
+.subscribe-button {
+  background-color: #ff006e; /* Change the background color as needed */
+  color: #fff;
+  padding: 10px 120px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.subscribe-button:hover {
+  background-color: #eee;
+  color: #ff006e;;
+   /* Change the background color on hover */
+}
